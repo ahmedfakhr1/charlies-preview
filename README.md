@@ -1,3 +1,3 @@
-Static preview site for charlies.
-Preview built from the shared dining template.
-Preview built from the shared dining template (rebuild 2026-10-06).
+# Charlie's
+
+Website concept by Ahmed Fakhreldin.
