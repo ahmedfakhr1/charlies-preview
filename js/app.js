@@ -33,20 +33,12 @@ const RESERVATION_FORM_URL = "";
     });
   }
 
-  // header: transparent over the photo, solid after a short scroll
+  // header: transparent over the first screen, solid after a short scroll
   var hdr = $('.hdr');
   var over = $('.hdr--over');
   if (over) {
     var solid = function () { over.classList.toggle('solid', window.scrollY > 40); };
     solid(); window.addEventListener('scroll', solid, { passive: true });
-  }
-
-  // opening fade finished: drop the animation so nothing stays composited
-  var hero = $('.hero');
-  if (hero) {
-    var settle = function () { hero.classList.add('settled'); };
-    var lastPn = $$('.pn', hero).pop();
-    if (lastPn && !still) { lastPn.addEventListener('animationend', function () { setTimeout(settle, 50); }); setTimeout(settle, 5200); } else settle();
   }
 
   // drawer
@@ -91,7 +83,7 @@ const RESERVATION_FORM_URL = "";
     if (box.children.length) slot.classList.add('has-form');
   });
 
-  // reveal on scroll (content is visible by default; the js class on <html> hides it until it enters)
+  // reveal on scroll, text only (content is visible by default; the js class on <html> hides it until it enters)
   var rv = $$('.rv');
   if (rv.length) {
     if (!('IntersectionObserver' in window) || still) { rv.forEach(function (n) { n.classList.add('in'); }); }
@@ -103,93 +95,37 @@ const RESERVATION_FORM_URL = "";
     }
   }
 
-  // menus section: slow crossfade between photos
-  var slides = $$('.menus .bg img'), dots = $$('.pager button');
-  if (slides.length > 1) {
-    var cur = 0, timer = null;
-    var show = function (i) {
-      cur = (i + slides.length) % slides.length;
-      slides.forEach(function (s, k) { s.classList.toggle('on', k === cur); });
-      dots.forEach(function (d, k) { d.setAttribute('aria-current', String(k === cur)); });
-    };
-    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
-    var go = function () { stop(); if (!still && !document.hidden) timer = setInterval(function () { show(cur + 1); }, 6500); };
-    dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); go(); }); });
-    show(0);
-    var sec = $('.menus');
-    if ('IntersectionObserver' in window && sec) {
-      new IntersectionObserver(function (es) { if (es[0].isIntersecting) go(); else stop(); }, { threshold: 0.2 }).observe(sec);
-    } else go();
-    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else if (sec && sec.getBoundingClientRect().top < innerHeight) go(); });
+  // deep links (menu.html#drinks, index.html#garden): place the target again once the fonts have settled the page height
+  if (location.hash.length > 1 && document.fonts && document.fonts.ready) {
+    var moved = false;
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, function () { moved = true; }, { once: true, passive: true }); });
+    document.fonts.ready.then(function () {
+      setTimeout(function () {
+        var t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (!t || moved) return;
+        var d = document.documentElement;
+        d.style.scrollBehavior = 'auto'; t.scrollIntoView(); d.style.scrollBehavior = '';
+      }, 60);
+    });
   }
 
-  // menu page: four menus switch on one page; a sticky row jumps between the sections of the open menu
-  var panels = $$('.mpanel');
-  if (panels.length) {
-    var tabs = $$('.mtabs a');
-    var jump = $('.subnav');
-    var jrow = $('.subnav .row');
-    var openPanel = function (p) {
-      panels.forEach(function (q) { q.classList.toggle('on', q === p); });
-      tabs.forEach(function (t) { var on = t.getAttribute('href') === '#' + p.id; if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current'); });
-      var secs = $$('.msec', p);
-      jrow.innerHTML = '';
-      if (secs.length > 1) {
-        secs.forEach(function (s) {
-          var a = document.createElement('a');
-          a.href = '#' + s.id; a.textContent = $('h2', s).textContent;
-          jrow.appendChild(a);
-        });
-        jump.hidden = false;
-      } else { jump.hidden = true; }
-    };
-    var spyOn = function (id) {
-      $$('a', jrow).forEach(function (a) { if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
-    };
-    var route = function (first) {
-      var id = decodeURIComponent((location.hash || '').slice(1));
-      var el = id ? document.getElementById(id) : null;
-      var p = el ? (el.classList.contains('mpanel') ? el : el.closest('.mpanel')) : null;
-      if (!p) { if (first) openPanel(panels[0]); return; }
-      var wasOpen = p.classList.contains('on');
-      openPanel(p);
-      if (el === p) {
-        // show the menu words and the start of the list, not just the list
-        var toMenus = function () {
-          var top = $('.mask').getBoundingClientRect().top + window.scrollY - (hdr ? hdr.offsetHeight : 60) - 16;
-          window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
-        };
-        toMenus();
-        if (first && document.readyState !== 'complete') window.addEventListener('load', function () { setTimeout(toMenus, 30); });
-      } else if (!wasOpen) {
-        el.scrollIntoView({ block: 'start', behavior: 'auto' });
-      }
-    };
-    window.addEventListener('hashchange', function () { route(false); });
-    tabs.forEach(function (t) {
-      t.addEventListener('click', function (e) {
-        e.preventDefault();
-        var p = document.getElementById(t.getAttribute('href').slice(1));
-        if (history.replaceState) history.replaceState(null, '', t.getAttribute('href')); else location.hash = t.getAttribute('href');
-        openPanel(p);
-      });
-    });
-    route(true);
-    // which section of the open menu is on screen
+  // menu page: the sticky row marks the part of the menu that is on screen
+  var jrow = $('.mjump .row');
+  if (jrow) {
+    var links = $$('a', jrow);
+    var groups = $$('.mgroup');
     var tick = false;
-    window.addEventListener('scroll', function () {
-      if (tick) return; tick = true;
-      requestAnimationFrame(function () {
-        tick = false;
-        var p = $('.mpanel.on'); if (!p) return;
-        var cut = (hdr ? hdr.offsetHeight : 60) + 90, cur2 = null;
-        $$('.msec', p).forEach(function (s) { if (s.getBoundingClientRect().top < cut) cur2 = s; });
-        if (cur2) {
-          spyOn(cur2.id);
-          var a = $('a[aria-current="true"]', jrow);
-          if (a && jrow.scrollWidth > jrow.clientWidth) jrow.scrollTo({ left: a.offsetLeft - jrow.clientWidth / 2 + a.offsetWidth / 2, behavior: 'auto' });
-        } else { $$('a', jrow).forEach(function (a) { a.removeAttribute('aria-current'); }); if (jrow.scrollLeft) jrow.scrollTo({ left: 0, behavior: 'auto' }); }
+    var spy = function () {
+      tick = false;
+      var cut = (hdr ? hdr.offsetHeight : 60) + 110, cur = null;
+      groups.forEach(function (g) { if (g.getBoundingClientRect().top < cut) cur = g; });
+      links.forEach(function (a) {
+        var on = !!cur && a.getAttribute('href') === '#' + cur.id;
+        if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        if (on && jrow.scrollWidth > jrow.clientWidth) jrow.scrollTo({ left: a.offsetLeft - jrow.clientWidth / 2 + a.offsetWidth / 2, behavior: 'auto' });
       });
-    }, { passive: true });
+    };
+    window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(spy); } }, { passive: true });
+    spy();
   }
 })();

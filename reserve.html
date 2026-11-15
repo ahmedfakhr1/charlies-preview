@@ -7,42 +7,50 @@
 <link rel="preload" href="fonts/cormorant-garamond-5d13e7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/josefin-sans-3603c1.woff2" as="font" type="font/woff2" crossorigin>
 <style>html.fl body{opacity:0}body{transition:opacity .25s ease}</style><script>(function(d){var h=d.documentElement;h.classList.add("fl","js");var f=function(){h.classList.remove("fl")};setTimeout(f,1200);if(d.fonts&&d.fonts.load){Promise.all([d.fonts.load('300 16px "Josefin Sans"'),d.fonts.load('400 16px "Josefin Sans"'),d.fonts.load('600 16px "Josefin Sans"'),d.fonts.load('italic 500 16px "Cormorant Garamond"')]).then(f,f)}else f()})(document)</script>
-<link rel="stylesheet" href="fonts.css?v=2"><link rel="stylesheet" href="css/site.css?v=2"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
+<link rel="stylesheet" href="fonts.css?v=3"><link rel="stylesheet" href="css/site.css?v=3"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr" id="top"><div class="hdr-in">
  <a class="brand" href="index.html" aria-label="Charlie&#x27;s, home"><img src="img/mark-cream.png" alt="Charlie&#x27;s" width="185" height="40"></a>
- <nav class="nav" aria-label="Main"><a href="index.html#story">Our story</a><a href="menu.html">Menu</a><a href="index.html#gallery">Gallery</a><a class="nav-book" href="#reservation">Book your table</a></nav>
+ <nav class="nav" aria-label="Main"><a href="index.html#story">Our story</a><a href="menu.html">Menu</a><a href="index.html#garden">The garden</a><a class="nav-book" href="#reservation">Book your table</a></nav>
  <div class="hdr-r"><button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button><a class="hbook" href="#reservation">Book</a>
  <button class="burger" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><i></i><i></i><i></i></button></div>
 </div></header>
-<nav class="mnav" id="mnav" aria-label="Menu"><a href="index.html">Home</a><a href="index.html#story">Our story</a><a href="menu.html">Menu</a><a href="index.html#gallery">Gallery</a><a href="reserve.html" aria-current="page">Contact</a><a class="nav-book" href="#reservation">Book your table</a><a class="sm first" href="tel:+201552735204">0155 273 5204</a><a class="sm" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">Instagram</a><button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button></nav>
+<nav class="mnav" id="mnav" aria-label="Menu"><a href="index.html">Home</a><a href="index.html#story">Our story</a><a href="menu.html">Menu</a><a href="index.html#garden">The garden</a><a href="reserve.html" aria-current="page">Contact</a><a class="nav-book" href="#reservation">Book your table</a><a class="sm first" href="tel:+201552735204">0155 273 5204</a><a class="sm" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">Instagram</a><button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button></nav>
 <main id="main" class="rpage">
 <section class="rtop">
- <div class="card"><img src="img/facade-card.webp" alt="The Charlie&#x27;s sign on its curved navy canopy, seen from the street" width="840" height="1540" fetchpriority="high"></div>
- <h1>Korba, Heliopolis</h1>
- <div class="rinfo">
-  <div><h2>Contact us</h2><a class="u" href="tel:+201552735204">0155 273 5204</a><a class="u" href="https://wa.me/201552735204" target="_blank" rel="noopener">WhatsApp</a></div>
-  <div><h2>Location</h2><a class="u" href="https://www.google.com/maps/search/?api=1&query=Charlie%27s+Korba+13+El+Thawra+St+Heliopolis+Cairo" target="_blank" rel="noopener">13 El Thawra St, Korba, Heliopolis, Cairo</a></div>
-  <div><h2>Hours</h2><p>Every day, 9 AM to 1 AM</p><p class="dim">Breakfast served 9 AM to 1:30 PM</p><p class="js-status">Open every day, 9 AM to 1 AM</p></div>
- </div>
+ <div class="arch arch--xs"><figure><img src="img/canopy.webp" alt="The brass Charlie&#x27;s sign and monogram over the entrance doors" width="480" height="852" fetchpriority="high"></figure></div>
+ <h1 class="big">Reservations</h1>
 </section>
-<section class="resv resv--page dark" id="reservation" data-reservation aria-labelledby="resv-h"><div class="wrap">
- <h2 class="h2 rv" id="resv-h">Book your table</h2>
- <p class="acc rv" style="--d:.1s">Open every day, from nine until one.</p>
- <p class="caps resv-hint rv" style="--d:.2s">Write to us on WhatsApp with the day, the time and how many of you are coming.</p>
- <div class="resv-embed" data-embed></div>
- <div class="resv-fallback rv" style="--d:.3s">
-  <div class="resv-actions"><a class="btn btn--fill" href="https://wa.me/201552735204?text=Hello%20Charlie%27s%2C%20I%20would%20like%20to%20book%20a%20table.%0ADate%3A%0ATime%3A%0ANumber%20of%20guests%3A%0AName%3A" target="_blank" rel="noopener">WhatsApp 0155 273 5204</a><a class="btn btn--line" href="tel:+201552735204">Call 0155 273 5204</a></div>
-  <p class="resv-note js-status">Open every day, 9 AM to 1 AM</p>
+<section class="book dark" id="reservation" data-reservation aria-label="Find us and book your table"><div class="wrap book-g">
+ <div class="find">
+  <p class="kick rv">Find us</p>
+  <h2 class="big rv" style="--d:.08s">Korba, Heliopolis</h2>
+  <dl class="facts rv" style="--d:.16s">
+   <div><dt>Address</dt><dd>13 El Thawra St, Korba, Heliopolis, Cairo <a class="ul" href="https://www.google.com/maps/search/?api=1&query=Charlie%27s+Korba+13+El+Thawra+St+Heliopolis+Cairo" target="_blank" rel="noopener">Open in Maps</a></dd></div>
+   <div><dt>Hours</dt><dd>Every day, 9 AM to 1 AM<span class="dim">Breakfast served until 1:30 PM</span><span class="js-status">Open every day, 9 AM to 1 AM</span></dd></div>
+   <div><dt>Phone</dt><dd><a class="ul" href="tel:+201552735204">0155 273 5204</a></dd></div>
+   <div><dt>Instagram</dt><dd><a class="ul" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">@charlieskorba</a></dd></div>
+  </dl>
  </div>
- <p class="resv-alt" data-alt>Prefer to talk to us? <a href="https://wa.me/201552735204?text=Hello%20Charlie%27s%2C%20I%20would%20like%20to%20book%20a%20table.%0ADate%3A%0ATime%3A%0ANumber%20of%20guests%3A%0AName%3A" target="_blank" rel="noopener">WhatsApp</a> <a href="tel:+201552735204">Call</a></p>
+ <div class="slot">
+  <h2 class="big rv" id="resv-h">Book your table</h2>
+  <p class="acc rv" style="--d:.08s">Open every day, from nine until one.</p>
+  <p class="resv-hint rv" style="--d:.16s">Write to us on WhatsApp with the day, the time and how many of you are coming.</p>
+  <div class="resv-embed" data-embed></div>
+  <div class="resv-fallback rv" style="--d:.24s">
+   <div class="resv-actions"><a class="btn btn--fill" href="https://wa.me/201552735204?text=Hello%20Charlie%27s%2C%20I%20would%20like%20to%20book%20a%20table.%0ADate%3A%0ATime%3A%0ANumber%20of%20guests%3A%0AName%3A" target="_blank" rel="noopener">WhatsApp 0155 273 5204</a><a class="btn btn--line" href="tel:+201552735204">Call 0155 273 5204</a></div>
+  </div>
+  <p class="resv-alt" data-alt>Prefer to talk to us? <a href="https://wa.me/201552735204?text=Hello%20Charlie%27s%2C%20I%20would%20like%20to%20book%20a%20table.%0ADate%3A%0ATime%3A%0ANumber%20of%20guests%3A%0AName%3A" target="_blank" rel="noopener">WhatsApp</a> <a href="tel:+201552735204">Call</a></p>
+ </div>
 </div></section>
 </main>
-<footer class="ftr"><div class="ftr-g">
- <div class="c-l"><h2>Follow us</h2><ul><li><a class="fl" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">Instagram @charlieskorba</a></li><li><a class="fl" href="tel:+201552735204">0155 273 5204</a></li></ul></div>
- <div class="c-m"><h2>Sister restaurant</h2><ul><li><a class="fl sis" href="https://ahmedfakhr1.github.io/tokyo-preview/" target="_blank" rel="noopener">Tokyo</a></li></ul></div>
- <div class="c-r"><h2>Reservations</h2><ul><li><a class="fl" href="#reservation">Book your table</a></li></ul></div>
+<footer class="ftr"><div class="ftr-in">
+ <a class="ftr-logo" href="index.html" aria-label="Charlie&#x27;s, home"><img src="img/logo-cream.png" alt="Charlie&#x27;s" width="508" height="110" loading="lazy" decoding="async"></a>
+ <span class="rule" aria-hidden="true"></span>
+ <p class="ftr-links"><a class="ft" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">Instagram @charlieskorba</a><a class="ft" href="tel:+201552735204">0155 273 5204</a></p>
+ <p class="ftr-sis">Our sister restaurant <a class="ft sis" href="https://ahmedfakhr1.github.io/tokyo-preview/" target="_blank" rel="noopener">Tokyo</a></p>
+ <button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button>
 </div></footer>
 <div class="toast" role="status" aria-live="polite">Arabic version coming soon.</div>
-<script src="js/app.js?v=2" defer></script>
+<script src="js/app.js?v=3" defer></script>
 </body></html>
