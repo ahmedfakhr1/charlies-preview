@@ -7,7 +7,7 @@
 <link rel="preload" href="fonts/cormorant-garamond-5d13e7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/josefin-sans-3603c1.woff2" as="font" type="font/woff2" crossorigin>
 <style>html.fl body{opacity:0}body{transition:opacity .25s cubic-bezier(.23,1,.32,1)}</style><script>(function(d){var h=d.documentElement;h.classList.add("fl","js");var f=function(){h.classList.remove("fl")};setTimeout(f,1200);setTimeout(function(){if(!h.classList.contains("ready"))h.classList.remove("js")},3500);if(d.fonts&&d.fonts.load){Promise.all([d.fonts.load('300 16px "Josefin Sans"'),d.fonts.load('400 16px "Josefin Sans"'),d.fonts.load('600 16px "Josefin Sans"'),d.fonts.load('italic 500 16px "Cormorant Garamond"')]).then(f,f)}else f()})(document)</script>
-<link rel="stylesheet" href="fonts.css?v=6"><link rel="stylesheet" href="css/site.css?v=6"><link rel="preload" as="image" href="img/hero.webp" fetchpriority="high"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
+<link rel="stylesheet" href="fonts.css?v=7"><link rel="stylesheet" href="css/site.css?v=7"><link rel="preload" as="image" href="img/hero.webp" fetchpriority="high"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr hdr--over" id="top"><div class="hdr-in">
  <a class="brand" href="index.html" aria-label="Charlie&#x27;s, home"><img src="img/mark-cream.png" alt="Charlie&#x27;s" width="185" height="40"></a>
@@ -34,7 +34,7 @@
 
 <section class="dn" id="daynight" aria-label="By day and by night">
  <article class="dn-d">
-  <div class="arch arch--s" data-ln="11,22"><figure><img src="img/day-arch.webp" alt="A chocolate cake with cream and a strawberry beside a teapot on a garden table" width="360" height="480" loading="lazy" decoding="async"></figure></div>
+  <div class="arch arch--s" data-ln="11,22"><figure><img src="img/day-arch-l.webp" alt="A chocolate cake with cream and a strawberry beside a teapot on a garden table" width="480" height="580" loading="lazy" decoding="async"></figure></div>
   <p class="kick rv">By day</p>
   <h2 class="mid rv" style="--d:.08s">Breakfast, 9 AM to 1:30 PM</h2>
   <a class="tlink rv" style="--d:.24s" href="menu.html#breakfast">Breakfast menu</a>
@@ -60,13 +60,9 @@
 </section>
 
 <section class="kit" id="kitchen" aria-labelledby="kit-h"><div class="wrap">
- <div class="kit-head"><h2 class="big rv rv-l" id="kit-h">From the kitchen</h2><a class="tlink rv" style="--d:.12s" href="menu.html">See the menu</a></div>
- <ul class="kit-row">
-  <li class="fd" style="--d:0s"><figure><img src="img/dish-salad.webp" alt="A white bowl of rocca, roasted potato and smoked salmon with sliced almonds" width="600" height="400" loading="lazy" decoding="async"><figcaption>Smoked Salmon Salad</figcaption></figure></li>
-  <li class="fd" style="--d:.14s"><figure><img src="img/dish-chicken.webp" alt="A golden breaded chicken fillet with onion rings, potato gratin and a sauce cup on a gold-rimmed plate" width="600" height="400" loading="lazy" decoding="async"><figcaption>Stuffed Chicken</figcaption></figure></li>
-  <li class="fd" style="--d:.28s"><figure><img src="img/dish-halloumi.webp" alt="Halloumi on sourdough with rocca and tomato" width="270" height="180" loading="lazy" decoding="async"><figcaption>Halloumi Toast</figcaption></figure></li>
-  <li class="fd" style="--d:.42s"><figure><img src="img/dish-cake.webp" alt="A dark chocolate cake with whipped cream and a strawberry" width="600" height="400" loading="lazy" decoding="async"><figcaption>Dark Chocolate Cake</figcaption></figure></li>
- </ul>
+ <div class="kit-head"><h2 class="big rv rv-l" id="kit-h">From the kitchen</h2></div>
+ <figure class="kit-one fd"><img src="img/dish-feature.webp" alt="A white bowl of rocca, roasted potato and smoked salmon with sliced almonds" width="1200" height="720" loading="lazy" decoding="async"><figcaption>Smoked Salmon Salad</figcaption></figure>
+ <p class="kit-more"><a class="tlink" href="menu.html">See the menu</a></p>
 </div></section>
 
 <section class="book dark" id="reservation" data-reservation aria-label="Find us and book your table"><div class="wrap book-g">
@@ -102,5 +98,5 @@
  <button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button>
 </div></footer>
 <div class="toast" role="status" aria-live="polite">Arabic version coming soon.</div>
-<script src="js/app.js?v=6" defer></script>
+<script src="js/app.js?v=7" defer></script>
 </body></html>

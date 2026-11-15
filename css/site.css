@@ -342,3 +342,26 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .facts > div, .facts > div:last-child { display: block; border: 0; padding: 18px 0; }
 .facts .ul { margin-inline: auto; }
 @media (max-width: 600px) { .facts { grid-template-columns: 1fr; } }
+
+/* ---------- quieter, larger ---------- */
+main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
+.hero-bg img { filter: saturate(.8) contrast(1.05); }
+.arch--s { --aw: min(400px, 100vw - 96px); }
+.arch::after { display: none; }
+.ln path + path { display: none; }
+.g-card { outline: 0; }
+.slot { background: none; padding: 0; }
+.slot::before { display: none; }
+.kick, .facts dt { color: rgba(238, 237, 234, .6); }
+.garden .kick { color: rgba(238, 237, 234, .6); }
+.slot .acc { color: var(--soft); }
+.kit-head { border-bottom: 0; padding-bottom: 0; }
+.kit-one { margin: clamp(36px, 4.4vw, 60px) auto 0; max-width: 1040px; }
+.kit-one img { width: 100%; aspect-ratio: 5 / 3; object-fit: cover; }
+.kit-one figcaption { margin-top: 20px; text-align: center; font: 600 12px/1.6 var(--f); letter-spacing: .24em; text-transform: uppercase; color: rgba(238, 237, 234, .78); }
+.kit-more { text-align: center; margin-top: 14px; }
+.kit-more .tlink { color: var(--ivory); }
+.name { padding: clamp(120px, 15vw, 220px) 0; }
+.name .big { font-size: clamp(38px, 5vw, 72px); }
+.kit { padding-top: clamp(104px, 12vw, 176px); padding-bottom: clamp(72px, 8vw, 120px); }
+.dn .arch { margin-bottom: 72px; }
