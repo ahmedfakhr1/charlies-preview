@@ -365,3 +365,17 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .name .big { font-size: clamp(38px, 5vw, 72px); }
 .kit { padding-top: clamp(104px, 12vw, 176px); padding-bottom: clamp(72px, 8vw, 120px); }
 .dn .arch { margin-bottom: 72px; }
+
+/* ---------- hero without a photograph: the name on deep night ---------- */
+.hero { justify-content: center; padding: calc(var(--hdr) + 24px) 0 clamp(64px, 10vh, 112px); background: #0a1119; }
+.hero-shade, .hero-shade { background:
+  linear-gradient(180deg, rgba(17, 25, 34, 0) 62%, #111922 100%),
+  radial-gradient(ellipse 60% 46% at 50% 44%, rgba(214, 178, 110, .11), rgba(214, 178, 110, 0) 70%),
+  radial-gradient(ellipse 120% 90% at 50% 40%, #16222f 0%, #0d151e 58%, #070b10 100%); }
+@media (max-width: 760px) {
+  .hero-shade { background:
+    linear-gradient(180deg, rgba(17, 25, 34, 0) 62%, #111922 100%),
+    radial-gradient(ellipse 96% 34% at 50% 44%, rgba(214, 178, 110, .12), rgba(214, 178, 110, 0) 72%),
+    radial-gradient(ellipse 150% 80% at 50% 42%, #16222f 0%, #0d151e 60%, #070b10 100%); }
+}
+.h-logo img { width: clamp(280px, 34vw, 508px); }

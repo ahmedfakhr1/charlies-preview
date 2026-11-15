@@ -49,7 +49,6 @@ The photos now in `img/` are placeholders sitting in final-sized slots. To swap 
 
 | File | Where it goes | Best source size |
 | --- | --- | --- |
-| `hero.webp` | Full-bleed first screen, cropped to cover. The focal point (the sign) is set by `object-position` on `.hero-bg img` in `css/site.css`. Keep the left and bottom dark: the text sits there. | 2400 x 1350 or larger (landscape) |
 | `day-arch.webp` | The "By day" arch, 3:4 | 900 x 1200 |
 | `night-arch.webp` | The "By night" arch, 3:4 | 900 x 1200 |
 | `garden.webp` | The garden, left column | 1200 x 1500 |
