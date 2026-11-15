@@ -299,3 +299,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .go { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 24px; }
 .go h1 { font: 600 16px/1.6 var(--f); letter-spacing: .3em; text-transform: uppercase; }
 .go p { margin-top: 18px; }
+
+/* quieter header */
+.nav a, .lang, .hbook { font-size: 11px; letter-spacing: .22em; }
+.nav a { padding: 16px clamp(14px, 2vw, 30px); color: rgba(244,236,218,.82); }
+.nav a.nav-book { font-weight: 400; }
