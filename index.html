@@ -7,7 +7,7 @@
 <link rel="preload" href="fonts/cormorant-garamond-5d13e7.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/josefin-sans-3603c1.woff2" as="font" type="font/woff2" crossorigin>
 <style>html.fl body{opacity:0}body{transition:opacity .25s cubic-bezier(.23,1,.32,1)}</style><script>(function(d){var h=d.documentElement;h.classList.add("fl","js");var f=function(){h.classList.remove("fl")};setTimeout(f,1200);setTimeout(function(){if(!h.classList.contains("ready"))h.classList.remove("js")},3500);if(d.fonts&&d.fonts.load){Promise.all([d.fonts.load('300 16px "Josefin Sans"'),d.fonts.load('400 16px "Josefin Sans"'),d.fonts.load('600 16px "Josefin Sans"'),d.fonts.load('italic 500 16px "Cormorant Garamond"')]).then(f,f)}else f()})(document)</script>
-<link rel="stylesheet" href="fonts.css?v=4"><link rel="stylesheet" href="css/site.css?v=4"><link rel="preload" as="image" href="img/hero.webp" fetchpriority="high"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
+<link rel="stylesheet" href="fonts.css?v=6"><link rel="stylesheet" href="css/site.css?v=6"><link rel="preload" as="image" href="img/hero.webp" fetchpriority="high"></head><body data-open="540" data-close="60" data-open-text="Open now, until 1 AM" data-closed-text="Closed now, opens at 9 AM">
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr hdr--over" id="top"><div class="hdr-in">
  <a class="brand" href="index.html" aria-label="Charlie&#x27;s, home"><img src="img/mark-cream.png" alt="Charlie&#x27;s" width="185" height="40"></a>
@@ -30,10 +30,6 @@
 
 <section class="name" id="story" aria-labelledby="name-h"><div class="wrap name-g">
  <div class="name-l"><p class="kick rv rv-l">Our story</p><h2 class="big rv rv-l" id="name-h" style="--d:.1s">Named for Charles Baehler, known as the godfather of Egyptian hospitality.</h2></div>
- <div class="name-r">
-  <p class="rv rv-r" style="--d:.2s">Charlie&#x27;s is an all-day restaurant at 13 El Thawra Street in Korba, Heliopolis.</p>
-  <p class="rv rv-r" style="--d:.32s">Tables are set from 9 AM every day. Breakfast is served until 1:30 PM, and dinner and desserts follow until 1 AM.</p>
- </div>
 </div></section>
 
 <section class="dn" id="daynight" aria-label="By day and by night">
@@ -41,14 +37,12 @@
   <div class="arch arch--s" data-ln="11,22"><figure><img src="img/day-arch.webp" alt="A chocolate cake with cream and a strawberry beside a teapot on a garden table" width="360" height="480" loading="lazy" decoding="async"></figure></div>
   <p class="kick rv">By day</p>
   <h2 class="mid rv" style="--d:.08s">Breakfast, 9 AM to 1:30 PM</h2>
-  <p class="rv" style="--d:.16s">Eggs, toasts, bowls and oven dishes, plus Charlie&#x27;s Feteer and a Royal Breakfast to share.</p>
   <a class="tlink rv" style="--d:.24s" href="menu.html#breakfast">Breakfast menu</a>
  </article>
  <article class="dn-n">
   <div class="arch arch--s" data-ln="11,22"><figure><img src="img/night-arch.webp" alt="A golden breaded cutlet with onion rings and potato gratin on a gold-rimmed plate" width="600" height="800" loading="lazy" decoding="async"></figure></div>
   <p class="kick rv">By night</p>
   <h2 class="mid rv" style="--d:.08s">Dinner and desserts, until 1 AM</h2>
-  <p class="rv" style="--d:.16s">Pasta, pizza, burgers and mains, then desserts such as Tiramisu and Baked Ricotta Cheesecake.</p>
   <a class="tlink rv" style="--d:.24s" href="menu.html#allday">Dinner menu</a>
  </article>
 </section>
@@ -59,7 +53,6 @@
   <div class="g-card rv rv-z">
    <p class="kick">Outdoor seating</p>
    <h2 class="mid" id="garden-h">The garden</h2>
-   <p>Open every day, 9 AM to 1 AM.</p>
    <a class="tlink" href="#reservation">Book a table</a>
   </div>
   <figure class="g-b"><img src="img/sign-small.webp" alt="The navy Charlie&#x27;s sign curving beside a palm trunk against the building" width="800" height="450" loading="lazy" decoding="async"></figure>
@@ -82,7 +75,7 @@
   <h2 class="big rv rv-l" style="--d:.08s">Korba, Heliopolis</h2>
   <dl class="facts rv rv-l" style="--d:.16s">
    <div><dt>Address</dt><dd>13 El Thawra St, Korba, Heliopolis, Cairo <a class="ul" href="https://www.google.com/maps/search/?api=1&query=Charlie%27s+Korba+13+El+Thawra+St+Heliopolis+Cairo" target="_blank" rel="noopener">Open in Maps</a></dd></div>
-   <div><dt>Hours</dt><dd>Every day, 9 AM to 1 AM<span class="dim">Breakfast served until 1:30 PM</span><span class="js-status">Open every day, 9 AM to 1 AM</span></dd></div>
+   <div><dt>Hours</dt><dd>Every day, 9 AM to 1 AM<span class="js-status">Open every day, 9 AM to 1 AM</span></dd></div>
    <div><dt>Phone</dt><dd><a class="ul" href="tel:+201552735204">0155 273 5204</a></dd></div>
    <div><dt>Instagram</dt><dd><a class="ul" href="https://www.instagram.com/charlieskorba/" target="_blank" rel="noopener">@charlieskorba</a></dd></div>
   </dl>
@@ -109,5 +102,5 @@
  <button class="lang js-ar" type="button" aria-label="Arabic version"><span lang="ar">العربية</span></button>
 </div></footer>
 <div class="toast" role="status" aria-live="polite">Arabic version coming soon.</div>
-<script src="js/app.js?v=4" defer></script>
+<script src="js/app.js?v=6" defer></script>
 </body></html>
