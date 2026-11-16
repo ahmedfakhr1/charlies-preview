@@ -379,3 +379,14 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
     radial-gradient(ellipse 150% 80% at 50% 42%, #16222f 0%, #0d151e 60%, #070b10 100%); }
 }
 .h-logo img { width: clamp(280px, 34vw, 508px); }
+
+/* ---------- hero: the name leads, a small line rises under it, booking rests at the foot ---------- */
+.hero-in { position: static; }
+.h-logo img { width: clamp(290px, 46vw, 700px); }
+.h-rule { width: 40px; margin: clamp(26px, 4vh, 44px) auto clamp(16px, 2.2vh, 22px); }
+.h-line { font-size: clamp(17px, 1.5vw, 22px); letter-spacing: .02em; color: rgba(246, 236, 212, .78); max-width: none; }
+.hero .h-line { animation: rise-far 1.6s var(--ease) 1.3s backwards; }
+@keyframes rise-far { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.hero .tlink { position: absolute; left: 50%; bottom: clamp(38px, 7.5vh, 76px); margin: 0; transform: translateX(-50%); white-space: nowrap; animation: fade 1.6s var(--ease) 2.1s backwards; }
+.hero { padding-bottom: clamp(96px, 16vh, 150px); }
+@media (prefers-reduced-motion: reduce) { .hero .h-line, .hero .tlink { animation: none; } }
