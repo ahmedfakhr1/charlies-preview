@@ -390,3 +390,6 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .hero .tlink { position: absolute; left: 50%; bottom: clamp(38px, 7.5vh, 76px); margin: 0; transform: translateX(-50%); white-space: nowrap; animation: fade 1.6s var(--ease) 2.1s backwards; }
 .hero { padding-bottom: clamp(96px, 16vh, 150px); }
 @media (prefers-reduced-motion: reduce) { .hero .h-line, .hero .tlink { animation: none; } }
+
+/* link underline grows from the centre, like everything else */
+.tlink::after { transform-origin: center; }
