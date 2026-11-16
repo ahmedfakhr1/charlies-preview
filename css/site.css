@@ -393,3 +393,11 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 
 /* link underline grows from the centre, like everything else */
 .tlink::after { transform-origin: center; }
+
+/* ---------- top bar: clear at the top, dark glass on the way back up ---------- */
+.hdr { transition: transform .6s var(--ease), background-color .5s var(--ease); }
+.hdr::before { display: none; }
+.hdr.is-glass { background: rgba(13, 20, 28, .62); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); }
+.hdr.is-away:not(.menu-open) { transform: translateY(-102%); }
+.hdr.menu-open { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
+@media (prefers-reduced-motion: reduce) { .hdr { transition: none; } }
