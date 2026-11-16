@@ -401,3 +401,15 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .hdr.is-away:not(.menu-open) { transform: translateY(-102%); }
 .hdr.menu-open { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
 @media (prefers-reduced-motion: reduce) { .hdr { transition: none; } }
+
+/* ---------- hero photograph slot (placeholder until the owner's photo arrives) ---------- */
+.hero-bg img { filter: saturate(.84) contrast(1.04) sepia(.07); }
+.hero-ph { background:
+  repeating-linear-gradient(135deg, rgba(246, 236, 212, .028) 0 1px, transparent 1px 22px),
+  linear-gradient(160deg, #2c3a4a 0%, #1c2733 55%, #121a23 100%); }
+.hero-ph::after { content: ""; position: absolute; inset: calc(var(--hdr) + 8px) clamp(16px, 3vw, 48px) clamp(16px, 3vw, 40px); border: 1px dashed rgba(246, 236, 212, .34); pointer-events: none; }
+.hero-ph__tag { position: absolute; right: clamp(28px, 4vw, 64px); top: calc(var(--hdr) + 22px); display: inline-flex; align-items: center; gap: 8px; font: 500 10px/1 var(--f); letter-spacing: .24em; text-transform: uppercase; color: rgba(246, 236, 212, .74); }
+.hero .hero-shade { background:
+  linear-gradient(180deg, rgba(10, 16, 23, .5) 0%, rgba(10, 16, 23, .12) 26%, rgba(10, 16, 23, .2) 58%, rgba(17, 25, 34, .86) 88%, #111922 100%),
+  radial-gradient(ellipse 58% 40% at 50% 46%, rgba(7, 11, 16, .5), rgba(7, 11, 16, 0) 72%); }
+@media (max-width: 760px) { .hero-ph__tag { left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; } }
