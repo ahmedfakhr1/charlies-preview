@@ -402,7 +402,7 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .hdr.menu-open { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
 @media (prefers-reduced-motion: reduce) { .hdr { transition: none; } }
 
-/* ---------- hero photograph slot (placeholder until the owner's photo arrives) ---------- */
+/* ---------- hero photograph slot, until the owner sends the photo ---------- */
 .hero-bg img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .hero-ph { background:
   repeating-linear-gradient(135deg, rgba(246, 236, 212, .028) 0 1px, transparent 1px 22px),
