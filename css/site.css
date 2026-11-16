@@ -428,3 +428,11 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .cc__row:focus-visible { outline: 1px solid var(--hi); outline-offset: 2px; }
 @media (hover: hover) and (pointer: fine) { .cc__row:hover .cc__arr { transform: translateX(5px); } .cc__row:hover .cc__t { color: var(--hi); } }
 .find .cc { margin: clamp(28px, 3.4vw, 44px) auto 0; }
+
+/* ---------- light glass over the ivory garden ---------- */
+.nav a, .lang, .hbook, .burger i, .brand img { transition: color .45s var(--ease), background-color .45s var(--ease), filter .45s var(--ease), opacity .6s var(--ease); }
+.hdr.is-glass.on-light:not(.menu-open) { background: rgba(244, 238, 226, .74); }
+.hdr.is-glass.on-light:not(.menu-open) .nav a, .hdr.is-glass.on-light:not(.menu-open) .lang { color: #16212d; }
+.hdr.is-glass.on-light:not(.menu-open) .nav a.nav-book, .hdr.is-glass.on-light:not(.menu-open) .hbook { color: #84632a; }
+.hdr.is-glass.on-light:not(.menu-open) .burger i { background: #16212d; }
+.hdr.is-glass.on-light:not(.menu-open) .brand img { filter: brightness(0) invert(13%) sepia(20%) saturate(900%) hue-rotate(175deg); }

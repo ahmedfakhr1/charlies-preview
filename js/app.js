@@ -228,3 +228,19 @@ const RESERVATION_FORM_URL = "";
   h.addEventListener('focusin', function () { h.classList.remove('is-away'); });
   run();
 })();
+
+/* top bar glass takes the colour of what is under it: light glass over the paper sections */
+(function () {
+  var h = document.querySelector('.hdr'), light = [].slice.call(document.querySelectorAll('.garden'));
+  if (!h || !light.length) return;
+  var busy = false;
+  var run = function () {
+    busy = false;
+    var y = h.getBoundingClientRect().bottom - 8, on = false;
+    light.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top <= y && r.bottom >= y) on = true; });
+    h.classList.toggle('on-light', on);
+  };
+  window.addEventListener('scroll', function () { if (!busy) { busy = true; requestAnimationFrame(run); } }, { passive: true });
+  window.addEventListener('resize', run);
+  run();
+})();
