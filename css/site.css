@@ -436,3 +436,10 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .hdr.is-glass.on-light:not(.menu-open) .nav a.nav-book, .hdr.is-glass.on-light:not(.menu-open) .hbook { color: #84632a; }
 .hdr.is-glass.on-light:not(.menu-open) .burger i { background: #16212d; }
 .hdr.is-glass.on-light:not(.menu-open) .brand img { filter: brightness(0) invert(13%) sepia(20%) saturate(900%) hue-rotate(175deg); }
+
+/* ---------- story slot, until the owner sends the story ---------- */
+.story-slot { position: relative; width: min(100%, 620px); margin: clamp(30px, 4vw, 48px) auto 0; padding: 26px clamp(22px, 4vw, 44px) 30px; border: 1px dashed rgba(246, 236, 212, .3); display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.story-slot__tag { margin-bottom: 8px; font: 500 10px/16px var(--f); letter-spacing: .24em; text-transform: uppercase; color: rgba(246, 236, 212, .7); white-space: nowrap; }
+.story-slot i { display: block; height: 1px; width: 100%; background: rgba(246, 236, 212, .16); }
+.story-slot i:nth-of-type(2) { width: 92%; } .story-slot i:nth-of-type(3) { width: 96%; } .story-slot i:nth-of-type(4) { width: 58%; }
+.story-p { max-width: 34em; margin: 22px auto 0; font: 400 18px/1.75 var(--f); color: rgba(246, 236, 212, .82); text-wrap: pretty; }
