@@ -443,3 +443,6 @@ main img { filter: saturate(.84) contrast(1.04) sepia(.07); }
 .story-slot i { display: block; height: 1px; width: 100%; background: rgba(246, 236, 212, .16); }
 .story-slot i:nth-of-type(2) { width: 92%; } .story-slot i:nth-of-type(3) { width: 96%; } .story-slot i:nth-of-type(4) { width: 58%; }
 .story-p { max-width: 34em; margin: 22px auto 0; font: 400 18px/1.75 var(--f); color: rgba(246, 236, 212, .82); text-wrap: pretty; }
+
+/* top bar: fully clear at all times (Ahmed); text colour still follows the section */
+.hdr.is-glass, .hdr.is-glass.on-light:not(.menu-open) { background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; }
